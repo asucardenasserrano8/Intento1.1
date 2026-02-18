@@ -1,0 +1,166 @@
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --income: #10b981;
+  --expense: #ef4444;
+  --accent: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #0b1220 0%, #101a31 100%);
+  color: var(--text);
+}
+
+.hero {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: var(--muted);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 0 auto 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.8rem;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  border-radius: 10px;
+  border: 1px solid #243248;
+  padding: 0.65rem 0.7rem;
+  font-size: 0.95rem;
+  background: #0b1324;
+  color: var(--text);
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+}
+
+.summary article {
+  background: #0b1324;
+  border: 1px solid #1f2f46;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+.summary h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.summary p {
+  margin: 0.35rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.goal-controls {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.progress {
+  width: 100%;
+  height: 14px;
+  margin: 0.8rem 0;
+  background: #1d293b;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#goal-progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #10b981, #22d3ee);
+  transition: width 0.3s ease;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.8rem 0 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.history-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b1324;
+  border: 1px solid #1f2f46;
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+}
+
+.amount.income {
+  color: var(--income);
+}
+
+.amount.expense {
+  color: var(--expense);
+}
+
+.danger {
+  background: #b91c1c;
+}

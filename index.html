@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finanzas Personales Pro</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Finanzas Personales Pro</h1>
+      <p>Controla ingresos, gastos y tu meta de ahorro mensual.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Registrar movimiento</h2>
+        <form id="movement-form" class="grid-form">
+          <label>
+            Concepto
+            <input id="concept" type="text" placeholder="Ej: Sueldo, supermercado" required />
+          </label>
+          <label>
+            Tipo
+            <select id="type" required>
+              <option value="income">Ingreso</option>
+              <option value="expense">Gasto</option>
+            </select>
+          </label>
+          <label>
+            Monto
+            <input id="amount" type="number" min="0.01" step="0.01" placeholder="0.00" required />
+          </label>
+          <button type="submit">Agregar</button>
+        </form>
+      </section>
+
+      <section class="card summary">
+        <h2>Resumen mensual</h2>
+        <div class="summary-grid">
+          <article>
+            <h3>Ingresos</h3>
+            <p id="total-income">$0.00</p>
+          </article>
+          <article>
+            <h3>Gastos</h3>
+            <p id="total-expense">$0.00</p>
+          </article>
+          <article>
+            <h3>Balance</h3>
+            <p id="balance">$0.00</p>
+          </article>
+          <article>
+            <h3>Ahorro estimado</h3>
+            <p id="savings-rate">0%</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Meta de ahorro</h2>
+        <div class="goal-controls">
+          <label>
+            Objetivo mensual ($)
+            <input id="goal" type="number" min="0" step="1" placeholder="1000" />
+          </label>
+          <button id="save-goal" type="button">Guardar meta</button>
+        </div>
+        <div class="progress">
+          <div id="goal-progress-bar"></div>
+        </div>
+        <p id="goal-status">Define una meta para ver tu progreso.</p>
+      </section>
+
+      <section class="card">
+        <div class="history-header">
+          <h2>Historial</h2>
+          <button id="clear-all" type="button" class="danger">Limpiar todo</button>
+        </div>
+        <ul id="history-list" class="history-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
